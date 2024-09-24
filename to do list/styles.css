@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(23, 22, 22, 0.5);
+    color: #343634;
+    text-align: center;
+    padding: 1em;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.item-wrapper {
+    display: flex; /* Flexbox layout to align checkbox and box horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+}
+
+.box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    flex-grow: 1; /* Grow to fill available space */
+}
+.box:hover {
+    background-color: rgba(134, 133, 133, 0.55); /* Change background color on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Make columns stack on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+    }
+}
+
+.button {
+    background-color: rgba(23, 22, 22, 0.5);
+    border: 5px solid rgb(52, 54, 52); /* Added solid style */
+    color: rgb(52, 54, 52);
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height, making it a square */
+    text-align: center;
+    text-decoration: none;
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    padding: 0;
+    font-size: 50px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px; /* No border-radius for sharp corners */
+}
+
+.button:hover {
+    background-color: rgba(23, 22, 22, 0.71); /* Change background color on hover */
+    color: rgb(26, 26, 26);
+    transform: scale(1.05); /* Slight zoom-in effect */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox {
+    background-color: rgba(66, 197, 36, 0.51);
+    border: 5px solid rgba(2, 101, 2, 0.57);
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox:hover {
+    background-color: rgba(66, 197, 36, 0.81);
+    transform: scale(1.05);
+}
+
+/* Checkmark when the checkbox is selected */
+.checkbox:checked + .custom-checkbox {
+    background-color: rgba(3, 124, 3, 0.85);
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
